@@ -1,9 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Cvijet.h"
-#include "AssetManager.h"
 
-#define DEBUG
+//#define DEBUG
 
 //helper function to figure out where to pain the flower
 void pprint(sf::Vector2i localPosition) { 
@@ -15,7 +14,7 @@ int main(){
 	sf::RenderWindow window(sf::VideoMode(1024, 548), "sDollars pls");
 	window.setFramerateLimit(60);
 
-	// load background (todo: use assetmanager)
+	// load background
 	sf::Texture texture;
 	if (!texture.loadFromFile("data\\sprites\\background.jpg")) {
 		std::cerr << "Failed to load background, exiting..." << std::endl;
