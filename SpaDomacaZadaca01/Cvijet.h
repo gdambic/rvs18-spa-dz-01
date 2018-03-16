@@ -6,6 +6,7 @@
 ///////////////////////////////////////////////////
 // Cvijet draws and renders a flower on screen
 ///////////////////////////////////////////////////
+//todo: replace me with fancy 3D model 
 class Cvijet {
 public:
 	Cvijet(sf::RenderWindow* window);
@@ -31,5 +32,4 @@ private:
 	sf::Vector2f leafPos2;
 	sf::Vector2f leafPos3;
 };
-
 #endif // CVIJET_H_
