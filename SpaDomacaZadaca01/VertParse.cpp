@@ -1,9 +1,4 @@
-#define  DEBUG_Z_
 #include "VertParse.h"
-
-#ifdef  DEBUG_Z_
-	#include <iostream>
-#endif
 
 bool VertParser::loadVert(std::string filename) {
 	if (filename.empty())
@@ -60,10 +55,6 @@ void VertParser::Parse() {
 			//convert everything into lowercase
 			std::transform(segment.begin(), segment.end(), segment.begin(), ::tolower);
 			std::transform(segment2.begin(), segment2.end(), segment2.begin(), ::tolower);
-
-			#ifdef DEBUG_Z_
-				std::cout << segment << ", " << segment2 << std::endl;
-			#endif
 
 			// get quads
 			if (segment == "quadnum") quadCotainer.numQuads = std::stoi(segment2);
