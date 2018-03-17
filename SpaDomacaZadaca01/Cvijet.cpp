@@ -24,6 +24,8 @@ void Cvijet::draw() {
 
 	// read container into shapes
 	VertQuad body;
+	if (!body.load(bar))
+		std::cerr << "Errorwhile loadig quads!" << std::endl;
 
 	// draw the plant
 	mainWindow->draw(body);
