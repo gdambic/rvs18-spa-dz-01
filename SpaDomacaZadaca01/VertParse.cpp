@@ -57,7 +57,6 @@ void VertParser::Parse() {
 			std::transform(segment2.begin(), segment2.end(), segment2.begin(), ::tolower);
 
 			// get quads
-			if (segment == "quadnum") quadCotainer.numQuads = std::stoi(segment2);
 			if (segment.find("quad.") == 0) quadCounter++;
 
 			switch (quadCounter) {

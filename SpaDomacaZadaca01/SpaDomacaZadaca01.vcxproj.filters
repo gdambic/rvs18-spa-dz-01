@@ -46,6 +46,6 @@
     <None Include="test.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="helper.cpp.txt" />
+    <Text Include="helper.cpp" />
   </ItemGroup>
 </Project>

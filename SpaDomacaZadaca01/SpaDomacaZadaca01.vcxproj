@@ -167,7 +167,9 @@
     <None Include="test.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="helper.cpp.txt" />
+    <Text Include="helper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

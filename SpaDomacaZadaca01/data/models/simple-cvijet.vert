@@ -1,6 +1,5 @@
 # Flower model
 # Summary
-quadNum      =      2
 
 # leaf
 quad.a.x     =      844

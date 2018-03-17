@@ -1,7 +1,7 @@
 #include "VertQuad.h"
 
 bool VertQuad::load(QuadContainer & bar) {
-	int numShapes = bar.numQuads;
+	int numShapes = bar.quads.size();
 
 	m_vertices.setPrimitiveType(sf::Quads);
 	m_vertices.resize(numShapes * 4); // quad has 4 points!
