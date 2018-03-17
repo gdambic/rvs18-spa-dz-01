@@ -1,7 +1,9 @@
-#include <iostream>
-#include <fstream>
-
+// rewrite me!
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <vector>
 
 #include "QuadStruct.h"
 #include "VertParse.h"
@@ -12,10 +14,25 @@ struct ClickType {
 	std::string type;
 };
 
-void inputHandler(ClickType& click, sf::RenderWindow& window);
+void inputHandler(ClickType& click, sf::RenderWindow& window); //, int numQuads);
+
+static void appendLineToFile(std::string filepath, std::string line) {
+	std::ofstream file;
+
+	file.open(filepath, std::ios::out | std::ios::app);
+	if (file.fail())
+		std::cout << "failed to open destination file." << std::endl;
+	// line.append("numQuads=",numQuads)
+
+	//make sure write fails with exception if something is wrong
+	file.exceptions(file.exceptions() | std::ios::failbit | std::ifstream::badbit);
+
+	file << line << std::endl;
+}
 
 // global clock for input handler
 sf::Clock gClock;
+std::vector<ClickType> tempVec;
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1024, 548), "shape loader test");
@@ -54,9 +71,28 @@ int main() {
 		window.display();
 
 		inputHandler(click, window);
-		std::cout << "x: " << click.position.x << ", y: " << click.position.y << ", type: " << click.type << '\n';
-	}
+		std::cout << "Vector size: " << tempVec.size() << std::endl;
 
+
+		if (tempVec.size() == 4) {
+			std::stringstream ss;
+			for (int i = 0; i < tempVec.size(); i++) {
+				switch (i) {
+				case 0: ss << "\nquad.a.x = " << tempVec[i].position.x
+					<< "\nquad.a.y = " << tempVec[i].position.y; break;
+				case 1: ss << "\nquad.b.x = " << tempVec[i].position.x
+					<< "\nquad.b.y = " << tempVec[i].position.y; break;
+				case 2: ss << "\nquad.c.x = " << tempVec[i].position.x
+					<< "\nquad.c.y = " << tempVec[i].position.y; break;
+				case 3: ss << "\nquad.d.x = " << tempVec[i].position.x
+					<< "\nquad.d.y = " << tempVec[i].position.y; break;
+				default: break;
+				}
+			}
+			appendLineToFile("test.vert", ss.str());
+			tempVec.clear();
+		}
+	}
 	std::cout << "Bye!" << std::endl;
 	return 0;
 }
@@ -73,7 +109,6 @@ void inputHandler(ClickType& click, sf::RenderWindow& window) {
 			click.type = "";
 			return;
 		}
-
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
 			if (!pressed) {
 				click.position = sf::Mouse::getPosition(window);
@@ -94,14 +129,7 @@ void inputHandler(ClickType& click, sf::RenderWindow& window) {
 			if (!pressed) {
 				click.position = sf::Mouse::getPosition(window);
 				click.type = "Left Click";
-				pressed = true;
-				break;
-			}
-		}
-		else if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
-			if (!pressed) {
-				click.position = sf::Mouse::getPosition(window);
-				click.type = "Right Click";
+				tempVec.push_back(click);
 				pressed = true;
 				break;
 			}
