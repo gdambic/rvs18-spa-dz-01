@@ -27,6 +27,9 @@
     <ClCompile Include="VertQuad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="painter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cvijet.h">
@@ -41,11 +44,5 @@
     <ClInclude Include="VertQuad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="test.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="helper.cpp" />
   </ItemGroup>
 </Project>
