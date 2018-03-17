@@ -1,6 +1,5 @@
 #ifndef VERTPARSER_H
 #define VERTPARSER_H
-#include <map>
 #include <vector>
 #include <string>
 #include <fstream>

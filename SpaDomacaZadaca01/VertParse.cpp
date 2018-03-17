@@ -2,7 +2,7 @@
 #include "VertParse.h"
 
 #ifdef  DEBUG_Z_
-#include <iostream>
+	#include <iostream>
 #endif
 
 bool VertParser::loadVert(std::string filename) {
@@ -27,7 +27,6 @@ bool VertParser::loadVert(std::string filename) {
 void VertParser::Parse() {
 	std::string line;
 	std::string line2;
-	std::string commentKey("#");
 
 	QuadStruct foo;
 	int quadCounter = 0;
@@ -51,11 +50,14 @@ void VertParser::Parse() {
 			segment.clear();
 			trimmer >> segment;
 
-			std::stringstream trimmer2;
-			trimmer2 << segment2;
-			segment2.clear();
-			trimmer2 >> segment2;
+			trimmer.str(std::string());
+			trimmer.clear();
 
+			trimmer << segment2;
+			segment2.clear();
+			trimmer >> segment2;
+
+			//convert everything into lowercase
 			std::transform(segment.begin(), segment.end(), segment.begin(), ::tolower);
 			std::transform(segment2.begin(), segment2.end(), segment2.begin(), ::tolower);
 
@@ -63,6 +65,7 @@ void VertParser::Parse() {
 				std::cout << segment << ", " << segment2 << std::endl;
 			#endif
 
+			// get quads
 			if (segment == "quadnum") quadCotainer.numQuads = std::stoi(segment2);
 			if (segment.find("quad.") == 0) quadCounter++;
 
