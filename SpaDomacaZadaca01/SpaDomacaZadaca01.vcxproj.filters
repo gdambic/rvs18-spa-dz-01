@@ -21,10 +21,31 @@
     <ClCompile Include="Cvijet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VertParse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VertQuad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cvijet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="QuadStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertParse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertQuad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="helper.cpp.txt" />
   </ItemGroup>
 </Project>

@@ -154,9 +154,20 @@
   <ItemGroup>
     <ClCompile Include="Cvijet.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="VertParse.cpp" />
+    <ClCompile Include="VertQuad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cvijet.h" />
+    <ClInclude Include="QuadStruct.h" />
+    <ClInclude Include="VertParse.h" />
+    <ClInclude Include="VertQuad.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="helper.cpp.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

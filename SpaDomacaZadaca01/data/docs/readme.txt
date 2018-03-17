@@ -32,11 +32,11 @@ Game:
 [x] - make and render drawing and background
 [x] - "animate" background with shader
 [ ] - build asset manager
-[ ] - make anim (photoshop)
-[ ] - render anim
+[x] - make anim (photoshop)
+[x] - render anim
 
 If time allows:
-[ ] - make custom file format for shapes and loader for it
+[x] - make custom file format for shapes and loader for it
 [ ] - build visual sprite editor that outputs sprite files
 
 Ambitious:
