@@ -5,13 +5,12 @@
 [x] - basic prototypes (drawing, anim)
 [x] - make and render drawing and background
 [x] - "animate" background with shader
-[ ] - build asset manager
 [x] - make anim (photoshop)
 [x] - render anim
 
 If time allows:
 [x] - make custom file format for shapes and loader for it
-[ ] - build visual sprite editor that outputs sprite files
+[x] - build visual sprite editor that outputs sprite files
 
 Ambitious:
 [x] - make flower model (blender)
@@ -23,11 +22,7 @@ Ambitious:
 
 Eh...
 [x] - shaders?
-[ ] - wind physics?
-[ ] - skybox and dynamic shadows?
-[ ] - randomly generated flower 3D models?
-[ ] - water?
-[ ] - fluid dynamics?
+
 
 ####### resources #######
 Art:

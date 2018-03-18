@@ -23,16 +23,27 @@ create the final geometry of the
 entity. 
 
 Vert file is simply a collection 
-of vertex primitives. Its a 2D model.
+of quad vertex primitives. 
+Its a 2D model.
 
 example.vert
 # this is a coment
-# Model summary
-pointNum     =        1
-lineum       =        1
-triagleNum   =        1
-quadNum      =        1
+# a(x,y)      b(x,y)
+#    +----- ----+
+#    |   quad   |
+#    +------ ---+
+# c(x,y)      d(x,y)
+quad.a.x     =      847
+quad.a.y     =      464
+quad.b.x     =      880
+quad.b.y     =      414
+quad.c.x     =      944
+quad.c.y     =      384
+quad.d.x     =      900
+quad.d.y     =      444
 
+
+# v 0.2 draft
 # point
 point.a.x    =        0
 point.a.y    =        0
@@ -51,23 +62,6 @@ triangle.b.y =        0
 triangle.c.x =        0
 triangle.c.y =        0
 
-
-# a(x,y)      b(x,y)
-#    +----- ----+
-#    |   quad   |
-#    +------ ---+
-# c(x,y)      d(x,y)
-quad.a.x     =      847
-quad.a.y     =      464
-quad.b.x     =      880
-quad.b.y     =      414
-quad.c.x     =      944
-quad.c.y     =      384
-quad.d.x     =      900
-quad.d.y     =      444
-
-
-# v 0.2 draft
 Make file format more .obj like:
 for e.g. represent point as
 > p x y
@@ -83,4 +77,3 @@ Add color atribute, for eg.
 
 # v 0.3
 textures?
-Implement textures and 
