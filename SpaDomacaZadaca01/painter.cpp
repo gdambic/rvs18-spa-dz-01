@@ -9,28 +9,15 @@
 #include "VertParse.h"
 #include "VertQuad.h"
 
-std::string modelFile = "test.vert";
+std::string modelFile = "data\\models\\simple-cvijet.vert";
 
 struct ClickType {
 	sf::Vector2i position;
 	std::string type;
 };
 
-void inputHandler(ClickType& click, sf::RenderWindow& window); //, int numQuads);
-
-static void appendLineToFile(std::string filepath, std::string line) {
-	std::ofstream file;
-
-	file.open(filepath, std::ios::out | std::ios::app);
-	if (file.fail())
-		std::cout << "failed to open destination file." << std::endl;
-	// line.append("numQuads=",numQuads)
-
-	//make sure write fails with exception if something is wrong
-	file.exceptions(file.exceptions() | std::ios::failbit | std::ifstream::badbit);
-
-	file << line << std::endl;
-}
+void inputHandler(ClickType& click, sf::RenderWindow& window);
+static void appendLineToFile(std::string filepath, std::string line);
 
 // global clock for input handler
 sf::Clock gClock;
@@ -77,8 +64,17 @@ int main() {
 
 
 		// load model
-		if (!spaz.loadVert("test.vert"))
-			std::cout << "Failed to load model file.\n";
+		if (!spaz.loadVert(modelFile)) {
+			std::cout << "Failed to load model file, making new one.\n";
+			std::ofstream myfile;
+			myfile.open(modelFile);
+			myfile << "# vert model";
+			myfile.close();
+			if (!spaz.loadVert(modelFile)) {
+				std::cout << "Failed to load model file, quiting...\n";
+				return -1;
+			}
+		}
 		bar = spaz.get_container();
 		if (!test.load(bar)) return -1;
 
@@ -123,7 +119,7 @@ int main() {
 			}
 
 			// clean
-			appendLineToFile("test.vert", ss.str());
+			appendLineToFile(modelFile, ss.str());
 			tempVec.clear();
 			tempVec2.clear();
 		}
@@ -132,6 +128,18 @@ int main() {
 	return 0;
 }
 
+static void appendLineToFile(std::string filepath, std::string line) {
+	std::ofstream file;
+
+	file.open(filepath, std::ios::out | std::ios::app);
+	if (file.fail())
+		std::cout << "failed to open destination file." << std::endl;
+
+	//make sure write fails with exception if something is wrong
+	file.exceptions(file.exceptions() | std::ios::failbit | std::ifstream::badbit);
+
+	file << line << std::endl;
+}
 
 void inputHandler(ClickType& click, sf::RenderWindow& window) {
 	static bool pressed = false;
@@ -186,11 +194,6 @@ void inputHandler(ClickType& click, sf::RenderWindow& window) {
 				myfile.open(modelFile);
 				myfile << "# vert model";
 				myfile.close();
-
-				// this doesntw ork, i need to sleep.
-				//bar.clearContainer();
-				//spaz.clearContainer();
-				//test.clearContainer();
 
 				break;
 			}
