@@ -23,3 +23,6 @@ bool VertQuad::load(QuadContainer & bar) {
 	}
 	return true;
 }
+
+//todo: use foreach(arrays as quad) { yield quad }
+//it doesnt store in RAM
