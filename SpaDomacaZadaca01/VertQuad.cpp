@@ -19,10 +19,6 @@ bool VertQuad::load(QuadContainer & bar) {
 		quad[1].color = sf::Color::Blue;
 		quad[2].color = sf::Color::Red;
 		quad[3].color = sf::Color::Red;
-
 	}
 	return true;
 }
-
-//todo: use foreach(arrays as quad) { yield quad }
-//it doesnt store in RAM
