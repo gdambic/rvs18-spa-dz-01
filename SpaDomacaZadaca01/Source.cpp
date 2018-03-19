@@ -13,7 +13,7 @@ int main(){
 
 	// initialize flower object and position it
 	Cvijet cvijet(&window);
-	cvijet.setPos(700, 145);
+	cvijet.setPos(700, 155);
 
 	while (window.isOpen()){
 
