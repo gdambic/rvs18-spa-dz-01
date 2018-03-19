@@ -46,7 +46,7 @@ Cvijet::Cvijet(sf::RenderWindow* window) : mainWindow(window) {
 	riseFactor = .05f;
 }
 
-void Cvijet::draw(sf::Time& deltaTime) {
+const void Cvijet::draw(const sf::Time& deltaTime) {
 	// load flower image
 	sf::Texture flowerTexture;
 	if (!flowerTexture.loadFromFile("data\\sprites\\flower.jpg")) {
@@ -68,10 +68,10 @@ void Cvijet::draw(sf::Time& deltaTime) {
 
 	//acumulate time with each frame
 	elapsedTime += deltaTime;
-	float timeAsSeconds = elapsedTime.asSeconds();
+	const float timeAsSeconds = elapsedTime.asSeconds();
 
 	// get current animation frame
-	int animFrame = static_cast<int>((timeAsSeconds / animDuration)*numFrames) % numFrames;
+	const int animFrame = static_cast<int>((timeAsSeconds / animDuration)*numFrames) % numFrames;
 	
 	// render animation frame depending on frame...
 	switch (animFrame) {

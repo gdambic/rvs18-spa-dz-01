@@ -70,10 +70,10 @@ void VertParser::Parse() {
 			}
 		}
 		if (quadCounter >= 8) {
-			quadCotainer.quads.push_back(foo);
+			quads.push_back(foo);
 			quadCounter = 0;
 		}
 	}
 }
 
-QuadContainer VertParser::get_container() { return quadCotainer; }
+std::vector<QuadStruct> VertParser::get_container() { return quads; }

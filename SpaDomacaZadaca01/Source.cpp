@@ -17,7 +17,7 @@ int main(){
 
 	while (window.isOpen()){
 
-		sf::Time deltaTime = clock1.restart();
+		const sf::Time deltaTime = clock1.restart();
 		sf::Event event; // handle input
 
 		while (window.pollEvent(event)){

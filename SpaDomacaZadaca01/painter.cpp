@@ -1,9 +1,10 @@
 // rewrite me!
-#include <SFML/Graphics.hpp>
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
 
 #include "QuadStruct.h"
 #include "VertParse.h"

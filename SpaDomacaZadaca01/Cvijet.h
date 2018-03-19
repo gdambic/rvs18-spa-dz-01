@@ -1,8 +1,9 @@
 #ifndef CVIJET_H_
 #define CVIJET_H_
-
 #include <iostream>
+
 #include <SFML/Graphics.hpp>
+
 #include "QuadStruct.h"
 #include "VertParse.h"
 #include "VertQuad.h"
@@ -15,7 +16,7 @@ class Cvijet {
 public:
 	Cvijet(sf::RenderWindow* window);
 
-	void draw(sf::Time & deltaTime);
+	const void draw(const sf::Time & deltaTime);
 
 	// only moves the flower image
 	void setPos(float x, float y);
@@ -28,7 +29,7 @@ private:
 	sf::Vector2f flowerPos;
 
 	// containers
-	QuadContainer bar;
+	std::vector<QuadStruct> bar;
 	VertParser spaz;
 
 	// distortionMap for shader

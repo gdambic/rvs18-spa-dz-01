@@ -35,14 +35,17 @@
     <ClInclude Include="Cvijet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuadStruct.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="VertParse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VertQuad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="QuadStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
