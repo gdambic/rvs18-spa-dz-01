@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
+#include "Cvijet.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(400, 400), "Hello, SFML world!");
+	sf::RenderWindow window(sf::VideoMode(500, 500), "SPA - Domaca Zadaca");
 	window.setFramerateLimit(60);
-	//Cvijet cvijet(&window);
+	Cvijet cvijet(&window);
 
 	while (window.isOpen())
 	{
@@ -15,8 +16,8 @@ int main()
 				window.close();
 		}
 
-		window.clear();
-		//cvijet.draw();
+		window.clear(sf::Color::Black);
+		cvijet.draw(window);
 		window.display();
 	}
 
