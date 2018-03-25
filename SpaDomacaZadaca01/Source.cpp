@@ -1,10 +1,14 @@
-#include <SFML/Graphics.hpp>
+#include"cvijet.h"
+#include"list.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(400, 400), "Hello, SFML world!");
-	window.setFramerateLimit(60);
-	//Cvijet cvijet(&window);
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Cvijet na vjetru by Picasso",sf::Style::Default);
+	window.setFramerateLimit(30);
+
+
+	cvijet cvijet1(&window);
+	list list1(&window);
 
 	while (window.isOpen())
 	{
@@ -16,7 +20,8 @@ int main()
 		}
 
 		window.clear();
-		//cvijet.draw();
+		cvijet1.iscrtaj();
+		list1.iscrtaj();
 		window.display();
 	}
 
