@@ -12,8 +12,6 @@ enum Stadij_Rasta
 class Cvijet
 {
 public:
-
-
 	Cvijet(sf::RenderWindow& renderWindow, Sunce& sunce, int idSunce);
 	void set_Rast(int rast);
 	int get_Rast() const;
@@ -32,10 +30,6 @@ public:
 
 	std::string StadijToString();
 
-
-
-
-
 private:
 	sf::RenderWindow &game_window;
 	int rast = 0;
@@ -47,5 +41,6 @@ private:
 	int idSunce;
 	sf::Clock clock;
 	int brojac_Animacije = 0;
+	bool animacija_rast = true;
 };
 

@@ -17,3 +17,4 @@ private:
 	sf::Sprite kantica_sprite;
 };
 
+ 

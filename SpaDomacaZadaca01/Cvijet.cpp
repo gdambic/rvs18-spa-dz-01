@@ -115,13 +115,26 @@ void Cvijet::draw()
 	{
 	
 			sf::Time elapsed1 = clock.getElapsedTime();
-		std::cout << elapsed1.asSeconds() << std::endl;
-		if (elapsed1.asSeconds() > 0.25f) {
-			brojac_Animacije++;
-			if (brojac_Animacije > 3)
+		if (elapsed1.asSeconds() > 0.1f) {
+			if (animacija_rast)
 			{
-				brojac_Animacije = 0;
+				brojac_Animacije++;
+				if (brojac_Animacije > 8)
+				{
+					animacija_rast = false;
+					brojac_Animacije = 8;
+				}
 			}
+			else 
+			{
+				brojac_Animacije--;
+				if (brojac_Animacije < 0)
+				{
+					animacija_rast = true;
+					brojac_Animacije = 0;
+				}
+			}
+
 			moje_sunce.setTrenutnaBoja(brojac_Animacije);
 			clock.restart();
 		}
