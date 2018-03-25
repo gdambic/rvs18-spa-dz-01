@@ -1,10 +1,14 @@
 #include <SFML/Graphics.hpp>
+#include <chrono>
+#include "Cvijet.h"
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(400, 400), "Hello, SFML world!");
-	window.setFramerateLimit(60);
-	//Cvijet cvijet(&window);
+
+	Cvijet cvijet(&window);
+
+	auto time = std::chrono::steady_clock::now();
 
 	while (window.isOpen())
 	{
@@ -15,8 +19,16 @@ int main()
 				window.close();
 		}
 
+		float dt;
+		{
+			const auto new_time = std::chrono::steady_clock::now();
+			dt = std::chrono::duration<float>(new_time - time).count();
+			time = new_time;
+		}
+		
+		cvijet.Update(dt);
 		window.clear();
-		//cvijet.draw();
+		cvijet.draw();
 		window.display();
 	}
 
