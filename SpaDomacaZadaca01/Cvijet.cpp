@@ -13,25 +13,23 @@ Cvijet::Cvijet(sf::RenderWindow *window) : mWindow(window) {
 // Ovo je funkcija za crtanje u mainu:
 void Cvijet::draw(){
 
+
+	// Crtam "oblak"
 	sf::Clock clock;
 	sf::Time time;
-
 	time = clock.getElapsedTime();
-	//std::cout << time.asSeconds() << endl;
 	// create an empty shape
 	sf::ConvexShape convex;
-
 	// resize it to 5 points
 	convex.setPointCount(5);
-
 	// define the points
 	convex.setPoint(0, sf::Vector2f(0, 0));
 	convex.setPoint(1, sf::Vector2f(150, 10));
 	convex.setPoint(2, sf::Vector2f(120, 90));
 	convex.setPoint(3, sf::Vector2f(30, 100));
 	convex.setPoint(4, sf::Vector2f(0, 50));
-
-	convex.move(sf::Vector2f(0.000000002 * time.asMilliseconds(), 10));
+	//cout << time.asSeconds() << endl;
+	convex.setPosition((time.asMicroseconds()), 10);
 	clock.restart().asSeconds();
 	mWindow->draw(convex);
 
