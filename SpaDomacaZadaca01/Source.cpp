@@ -3,6 +3,8 @@
 
 int main()
 {
+    std::cout << "Roses are red, \nviolets are blue, \nprogramming seems harder, \nthan learning kung fu." << std::endl;
+
     sf::RenderWindow window(sf::VideoMode(400, 400), "Hello, SFML world!");
     window.setFramerateLimit(60);
     Cvijet cvijet(&window);
